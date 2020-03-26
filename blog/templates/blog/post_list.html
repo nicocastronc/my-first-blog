@@ -4,21 +4,15 @@
     </head>
     <body>
         <div>
-            <h1><a href="/">Nicolas Castro | Blog</a></h1>
-        </div>
+    <h1><a href="/">Nicolas Castro | Blog</a></h1>
+</div>
 
-        <div>
-            <p>publicado: 14.06.2014, 12:14</p>
-            <h2><a href="">Mi primer post</a></h2>
-            <p>Hola, este es mi primer post.
-            Queria contarles que soy un capo.
-            Nos vemos.</p>
-        </div>
-
-        <div>
-            <p>publicado: 14.06.2014, 12:14</p>
-            <h2><a href="">Segundo post</a></h2>
-            <p>Hola de nuevo, nos vemos.</p>
-        </div>
+{% for post in posts %}
+    <div>
+        <p> publicado: {{ post.published_date }}</p>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}
     </body>
 </html>
